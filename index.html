@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Evening, Ndutcuuu!♡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sky">
+        <div class="moon"></div>
+        <div id="stars"></div>
+        <div id="falling"></div>
+        <div class="meteor"></div>
+        <div class="meteor second"></div>
+    </div>
+
+    <header>
+        <div class="logo">☾ Little Night Note</div>
+
+        <div class="header-right">
+            <div class="clock">
+                <span id="clock">00:00:00</span>
+                <small id="date"></small>
+            </div>
+
+            <button id="musicBtn">♫ Play Music</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PEMBUKA -->
+        <section class="hero">
+            <p class="subtitle">A LITTLE SURPRISE FOR YOU</p>
+
+            <h1>
+                Good evening,<br>
+                <span>Ndutcuuu!</span> ♡
+            </h1>
+
+            <p class="description">
+                Happy Sunday Night!
+                Semoga malam ini menjadi malam yang menyenangkan.
+                Jangan lupa tersenyum, ya!
+            </p>
+
+            <div class="buttons">
+                <a href="#letter" class="primary">Open Your Letter 💌</a>
+                <button id="wishBtn" class="secondary">
+                    Make a Wish ✨
+                </button>
+            </div>
+
+            <p id="wishMessage"></p>
+        </section>
+
+        <!-- SURAT RAHASIA -->
+        <section class="card" id="letter">
+
+            <div class="icon">💌</div>
+
+            <p class="subtitle">A SECRET MESSAGE</p>
+            <h2>A Little Letter for You</h2>
+
+            <p class="description">
+                Ada pesan kecil yang ingin aku sampaikan.
+                Coba buka amplopnya!
+            </p>
+
+            <button id="envelope" class="envelope">
+                <div class="letter-paper">
+                    <b>For Ndutcuuu ♡</b>
+                    <small>Open me</small>
+                </div>
+
+                <div class="envelope-back"></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-front"></div>
+                <div class="seal">♡</div>
+            </button>
+
+            <div id="letterMessage" class="hidden letter-message">
+                <h3>Hey, Ndutcuuu! 🌷</h3>
+
+                <p>
+                    Just a little reminder,
+                    jangan terlalu keras sama diri sendiri.
+                    Kamu juga berhak untuk beristirahat.
+                </p>
+
+                <p>
+                    Semoga malam Seninmu ini menyenangkan yaa
+                    Jangan lupa makan, jangan terlalu sering begadang,
+                    dan selalu jaga kesehatan.
+                </p>
+
+                <p>
+                    Have a wonderful night, Ndutcuuu! ♡
+                </p>
+            </div>
+
+        </section>
+
+        <!-- KEJUTAN -->
+        <section class="card">
+
+            <div class="icon">🦋</div>
+
+            <p class="subtitle">SPECIAL SURPRISE</p>
+
+            <h2>Are You Ready?</h2>
+
+            <p class="description">
+                Ada sedikit kejutan untuk kamu.
+                Klik tombol di bawah ini!
+            </p>
+
+            <button id="surpriseBtn" class="primary">
+                Open Your Surprise ✨
+            </button>
+
+            <div id="surpriseMessage" class="hidden surprise">
+                <div class="big-heart">💗</div>
+
+                <h2>You Are Amazing!</h2>
+
+                <p>
+                    Semoga kebahagiaan selalu menyertaimu.
+                    Keep smiling, Ndutcuuu!
+                    You deserve all the beautiful things.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- MINI GAME -->
+        <section class="card">
+
+            <p class="subtitle">A LITTLE NIGHT GAME</p>
+
+            <h2>Choose Your Mood ♡</h2>
+
+            <p class="description">
+                Bagaimana perasaanmu malam ini?
+            </p>
+
+            <div class="mood-buttons">
+                <button data-mood="calm">🌙<small>Calm</small></button>
+                <button data-mood="happy">✨<small>Happy</small></button>
+                <button data-mood="sweet">🌸<small>Sweet</small></button>
+            </div>
+
+            <p id="moodMessage">
+                Choose one to get a little message!
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Made with love and stardust ♡<br>
+        Especially for Ndutcuuu 🌷
+    </footer>
+
+    <audio id="music" src="music.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

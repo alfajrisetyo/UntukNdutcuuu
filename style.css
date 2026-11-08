@@ -1,0 +1,444 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(
+        135deg,
+        #17122d,
+        #302044,
+        #19132c
+    );
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* LANGIT MALAM */
+
+.sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.moon {
+    position: absolute;
+    top: 70px;
+    right: 12%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #fff0d5;
+    box-shadow: 0 0 50px #ffe7c9;
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 25px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #251b3c;
+}
+
+.star {
+    position: absolute;
+    color: white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; }
+    to { opacity: 1; }
+}
+
+/* HUJAN METEOR */
+
+.meteor {
+    position: absolute;
+    top: 15%;
+    left: 75%;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        white,
+        transparent
+    );
+    transform: rotate(-35deg);
+    animation: shooting 7s infinite;
+}
+
+.meteor.second {
+    top: 45%;
+    left: 45%;
+    animation-delay: 3s;
+}
+
+@keyframes shooting {
+    0%, 75% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+    80% { opacity: 1; }
+    100% {
+        opacity: 0;
+        transform: translate(-300px, 200px) rotate(-35deg);
+    }
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 7%;
+    gap: 15px;
+}
+
+.logo {
+    color: #ffb8d2;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.clock {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.clock small {
+    color: #cdbbdc;
+}
+
+button {
+    cursor: pointer;
+    font: inherit;
+}
+
+#musicBtn, .secondary {
+    background: #ffffff15;
+    border: 1px solid #ffffff40;
+    color: #ffc5df;
+    padding: 11px 17px;
+    border-radius: 30px;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 85px;
+}
+
+.subtitle {
+    color: #ffb8d2;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 9vw, 85px);
+    margin: 25px 0;
+    line-height: 1.1;
+}
+
+h1 span {
+    color: #ffb8d2;
+}
+
+.description {
+    color: #d6c9e0;
+    line-height: 1.9;
+    max-width: 550px;
+    margin: 15px auto;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd6e7, #f38db8);
+    color: #31172d;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.primary:hover, .secondary:hover {
+    transform: translateY(-4px);
+}
+
+#wishMessage {
+    color: #ffb8d2;
+    margin-top: 20px;
+}
+
+/* CARD */
+
+.card {
+    width: min(750px, 90%);
+    margin: 25px auto;
+    padding: 45px 25px;
+    text-align: center;
+    background: #ffffff10;
+    border: 1px solid #ffffff30;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 45px #00000030;
+}
+
+.card h2 {
+    margin: 15px 0;
+    font-family: Georgia, serif;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* ENVELOPE */
+
+.envelope {
+    position: relative;
+    width: 190px;
+    height: 130px;
+    margin: 35px auto;
+    display: block;
+    border: none;
+    background: transparent;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #e99abd;
+    border-radius: 8px;
+}
+
+.letter-paper {
+    position: absolute;
+    z-index: 1;
+    top: 7px;
+    left: 15px;
+    right: 15px;
+    height: 105px;
+    background: #fff8fc;
+    color: #87536d;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    transition: .7s;
+}
+
+.letter-paper small {
+    font-size: 11px;
+}
+
+.envelope-front {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background:
+        linear-gradient(145deg, transparent 49%, #e88eb4 50%),
+        linear-gradient(215deg, transparent 49%, #f1a0c1 50%);
+}
+
+.envelope-flap {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+    border-top: 72px solid #f8bdd5;
+    transform-origin: top;
+    transition: .6s;
+}
+
+.seal {
+    position: absolute;
+    z-index: 4;
+    top: 55px;
+    left: 45%;
+    color: white;
+    font-size: 25px;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter-paper {
+    transform: translateY(-65px);
+}
+
+.letter-message, .surprise {
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 18px;
+    background: #ffffff15;
+    animation: appear .6s;
+}
+
+.letter-message h3 {
+    color: #ffb8d2;
+    margin-bottom: 15px;
+}
+
+.letter-message p, .surprise p {
+    color: #e4d6e8;
+    line-height: 1.9;
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* SURPRISE */
+
+.big-heart {
+    font-size: 65px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.2); }
+}
+
+/* MINI GAME */
+
+.mood-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 25px;
+}
+
+.mood-buttons button {
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+    color: #ffb8d2;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-size: 25px;
+    transition: .3s;
+}
+
+.mood-buttons button:hover {
+    transform: translateY(-5px);
+}
+
+.mood-buttons small {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#moodMessage {
+    color: #ffb8d2;
+    min-height: 25px;
+}
+
+/* ANIMASI TERBANG */
+
+.float {
+    position: absolute;
+    bottom: -40px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    color: #cdbbdc;
+    padding: 35px;
+    line-height: 2;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 75px 15px;
+    }
+
+    .card {
+        padding: 35px 18px;
+    }
+
+    .moon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .moon::after {
+        width: 80px;
+        height: 80px;
+    }
+
+    #musicBtn {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
